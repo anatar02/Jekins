@@ -27,7 +27,7 @@ pipeline {
 		stage('Email'){
 		steps{
 		echo 'Build Success'
-		def specificCause = currentBuild.rawBuild.getCause(hudson.model.Cause$UserIdCause)
+		
 		}
 	}
 }
