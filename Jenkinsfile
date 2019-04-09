@@ -17,7 +17,7 @@ pipeline {
 
 				set M2_HOME=C:\\dev\\tools\\maven
 				set PATH=${M2_HOME}/bin:${PATH}
-				cd cucumber-jvm-junit
+				
 				mvn test
             }
         }
