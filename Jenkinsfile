@@ -48,4 +48,3 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
     }
 }
 }
-}
