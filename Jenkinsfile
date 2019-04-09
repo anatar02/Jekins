@@ -6,7 +6,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Credential', url: 'https://Ashok.Natarajan%40fepoc.com@bitbucket/scm/ta/dx-bdd.git']]])
+               
+			   checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'ca620896-7d7e-423d-8126-e3a25249db11', url: 'https://github.com/anatar02/CucumberJVMExamples.git']]])
             }
         }
         stage('Test'){
@@ -16,8 +17,8 @@ pipeline {
 
 				set M2_HOME=C:\\dev\\tools\\maven
 				set PATH=${M2_HOME}/bin:${PATH}
-		
-				mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" '''
+				cd cucumber-jvm-junit
+				mvn test
             }
         }
         stage('Deploy') {
