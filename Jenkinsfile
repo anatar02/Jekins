@@ -34,6 +34,7 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
 		echo 'Build Success'
 			}
 	}
+	
 	 catch (err) {
 
         currentBuild.result = "FAILURE"
@@ -46,6 +47,6 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
 
         throw err
     }
-}
-}
+	
+	}
 }
