@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-				mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" '''
+				#mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" '''
             }
         }
         stage('Deploy') {
