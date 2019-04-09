@@ -31,10 +31,8 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
         }
 		stage('Email'){
 		steps{
-		
 		echo 'Build Success'
 			}
-	}
 	}
 	 catch (err) {
 
@@ -48,5 +46,6 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
 
         throw err
     }
-
+}
+}
 }
