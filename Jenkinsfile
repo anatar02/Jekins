@@ -31,7 +31,8 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
         }
 		stage('Email'){
 		steps{
-		echo 'Build Success'
+		commitChangeset = sh(returnStdout: true, script: 'git diff-tree --no-commit-id --name-status -r HEAD').trim()
+		echo ${commitChangeset}
 			}
 	}
 	}
