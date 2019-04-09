@@ -29,6 +29,7 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
 		stage('Email'){
 		steps{
 		echo 'Build Success'
-    }
+			}
 	}
+}
 }
