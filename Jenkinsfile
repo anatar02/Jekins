@@ -34,7 +34,7 @@ pipeline {
 		echo 'Build Success'
 			}
 	}
-	}
+	
 	 catch (err) {
 
         currentBuild.result = "FAILURE"
@@ -47,6 +47,7 @@ pipeline {
 
         throw err
     }
+	}
 	
 	}
 }
