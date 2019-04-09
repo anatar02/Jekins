@@ -6,16 +6,17 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-			sh label: '', script: '''setJAVA_HOME=C:\\Java\\jdk8\\jre
-				set PATH=${JAVA_HOME}/bin:${PATH}
-
-				set M2_HOME=C:\\dev\\tools\\maven
-				set PATH=${M2_HOME}/bin:${PATH}
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Credential', url: 'https://Ashok.Natarajan%40fepoc.com@bitbucket/scm/ta/dx-bdd.git']]])
             }
         }
         stage('Test'){
             steps {
+				sh label: '', script: '''setJAVA_HOME=C:\\Java\\jdk8\\jre
+				set PATH=${JAVA_HOME}/bin:${PATH}
+
+				set M2_HOME=C:\\dev\\tools\\maven
+				set PATH=${M2_HOME}/bin:${PATH}
+		
 				mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" '''
             }
         }
@@ -27,7 +28,6 @@ pipeline {
 		stage('Email'){
 		steps{
 		echo 'Build Success'
-		
 		}
 	}
 }
