@@ -11,14 +11,14 @@ pipeline {
         }
         stage('Test'){
             steps {
-               setJAVA_HOME=C:\Java\jdk8\jre
+				sh label: '', script: '''setJAVA_HOME=C:\\Java\\jdk8\\jre
 set PATH=${JAVA_HOME}/bin:${PATH}
 
-set M2_HOME=C:\dev\tools\maven
+set M2_HOME=C:\\dev\\tools\\maven
 set PATH=${M2_HOME}/bin:${PATH}
 # mvn test  -DEnv=W2 -DBrowser=firefox -Dtest=EnrollmentRunner test
 # mvn test -Dcucumber.options="src/test/resources/featureFiles/ProcessNewClaim.feature" -Dcucumber.options="–tags @newContract"
-mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" 
+mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.options="--tags @newContract" '''
             }
         }
         stage('Deploy') {
