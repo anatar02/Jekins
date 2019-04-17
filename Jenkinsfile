@@ -1,5 +1,5 @@
 pipeline { 
-    agent { label 'Slave1-USA' }
+    agent any
     options {
         skipStagesAfterUnstable()
     }
@@ -11,13 +11,7 @@ pipeline {
         }
         stage('Test'){
             steps {
-				sh label: '', script: '''setJAVA_HOME=C:\\Java\\jdk8\\jre
-	set PATH=${JAVA_HOME}/bin:${PATH}
-
-		set M2_HOME=C:\\dev\\tools\\maven
-set PATH=${M2_HOME}/bin:${PATH}
-
-            }
+			   }
         }
         stage('Deploy') {
             steps {
@@ -28,62 +22,7 @@ set PATH=${M2_HOME}/bin:${PATH}
 		steps{
 		echo 'Build Success'
 		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
-		stage('Email'){
-		steps{
-		echo 'Build Success'
-		}
+		
 	}
 }
 }
