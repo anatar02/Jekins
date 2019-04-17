@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-			#checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Credential', url: 'https://github.com/anatar02/CucumberJVMExamples.git']]])
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Credential', url: 'https://github.com/anatar02/CucumberJVMExamples.git']]])
+			
             }
         }
         stage('Test'){
@@ -27,6 +26,62 @@ mvn test  -DEnv=W2 -DBrowser=firefox  -DRUNNER_TYPE=EnrollmentRunner -Dcucumber.
                cucumber failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
             }
         }
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
+		stage('Email'){
+		steps{
+		echo 'Build Success'
+		}
 		stage('Email'){
 		steps{
 		echo 'Build Success'
